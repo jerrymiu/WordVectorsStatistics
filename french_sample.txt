@@ -1,0 +1,136 @@
+**********************************************************************
+This wordvec.py script will read in a sample of English, French, or Korean training text and then uses the skip-gram model to train the word vectors. Each pair of words has a probability of appearing together determined by the number of times these pairs of words occur in the training text. For instance, in the training samples, ('United', 'States') will appear more often than ('United', 'Cows'), therefore after training, if the input word is 'United' then 'States' would be outputted with a higher probability compared to 'Cows'. Output will be generated as output.txt in the same directory as this python script. As well, a graph plotting the relative semantic closeness between words is created as tsne.png
+**********************************************************************
+Please choose either English, French, Korean
+Data size 18531900
+Most common words (+UNK) [['UNK', 1650375], ('de', 701100), ('la', 462375), ('et', 427275), ('le', 386325)]
+Sample data [115, 2314, 1, 3209, 1, 0, 9, 0, 0, 0] ['La', 'base', 'de', 'textes', 'de', 'UNK', 'des', 'UNK', 'UNK', 'UNK']
+2314 base -> 115 La
+2314 base -> 1 de
+1 de -> 3209 textes
+1 de -> 2314 base
+3209 textes -> 1 de
+3209 textes -> 1 de
+1 de -> 3209 textes
+1 de -> 0 UNK
+Initialized
+Average loss at step  0 :  178.446716309
+Training 0 %
+
+Nearest to son: Rousseau, ;, croyez, feraient, bon, bénéficiaires, absolu,, l'exécution,
+Nearest to plus: Lorsqu'une, objections,, dépendance, usurpateurs, nombre, deviennent, social, lui-,
+Nearest to qu'il: montrant, miens, poursuit, dit-on,, être, preuves, donner., forces,
+Nearest to Le: requête, déterminé, qu'une, Dans, individus, n'est, s'accorder, 1712,,
+Nearest to c'est: donc,, étant, notice, honnête, avantageux, a-t-on, contradictions, ferme,
+Nearest to être: innover, chacun, moins,, magiciens, qu'il, notre, jugé., fonctions,,
+Nearest to dont: connaissez, l'usage, eux-mêmes,, sainteté, ressorts, termes, n'est-ce, l'Angleterre,
+Nearest to avec: quatorze, équivoque,, faute,, Révélation, lui,, espérer, signifie, raisonnent,
+Nearest to si: procureur, exception, efforts, décret, l'ordre, jugement,, guerre,, chez,
+Nearest to celui: aura, d'erreur, citoyen., On, l'auteur., conservant, [Extrait, été,
+Nearest to y: tous, cents, sûreté,, ignorants, feraient, vue,, bientôt, tristes,
+Nearest to ces: ordonnance, autres., conclus, Rome,, prendra, bien, juger, uns,
+Nearest to où: haut, Lettres, Là-dessus, chapitre, possible, celui-ci, sensible,, acquise,
+Nearest to et: bornés, subordination,, [Ce, d'hommes,, espions, diffame., assemblée, suprême,
+Nearest to soit: civilement, périt, toléreront, arrivé, poursuites, l'accuse, souveraineté,, l'instrument,
+Nearest to aux: distingué, tiennent, dehors, rang, charte, Quoi, bon,, tellement,
+Average loss at step  2000 :  23.3408394284
+Training 5 %
+
+Average loss at step  4000 :  4.87298551357
+Training 11 %
+
+Average loss at step  6000 :  4.50895703816
+Training 17 %
+
+Average loss at step  8000 :  4.35632905805
+Training 22 %
+
+Average loss at step  10000 :  4.23710582876
+Training 28 %
+
+Nearest to son: l'exécution, flétris, croyez, n'étant, l'attention, extraire, Rousseau, causé,
+Nearest to plus: Lorsqu'une, dépendance, social, tolérance,, convaincre, nombre, usurpateurs, sentence,
+Nearest to qu'il: forces, Mais,, poursuit, montrant, dit-on,, magie,, qui, il,
+Nearest to Le: requête, Dans, vint, qu'une, zélés, généraux, valets, difficultés,,
+Nearest to c'est: donc,, notice, montrer,, signe, ferme, admettre, équité, original,
+Nearest to être: l'équité,, innover, moins,, magiciens, article, chacun, atteintes, disputer,
+Nearest to dont: sainteté, n'est-ce, termes, tort,, humaine,, expressément, l'usage, ranger,,
+Nearest to avec: contre, fortes, chez, devez, persécuteurs, bûcher, porté, à,
+Nearest to si: procureur, tissu, exception, s'enfuit, S'il, décret, désiré,, efforts,
+Nearest to celui: aura, citoyen., ceux, [Extrait, conservant, chrétiens,, illustres, malfaiteurs.,
+Nearest to y: n'y, sophismes, courir, d'où, tort, ignorants, bientôt, jusqu'ici,
+Nearest to ces: ordonnance, prendra, les, Rome,, autres., leurs, n'est-elle, uns,
+Nearest to où: haut, acquise, celui-ci, vit, sensible,, possible, Là-dessus, Lettres,
+Nearest to et: bornés, diffame., procédure,, fers, mais, d'hommes,, s'ensuit, l'assemblée,
+Nearest to soit: périt, l'instrument, toléreront, poursuites, arrivé, civilement, perdit, croit,
+Nearest to aux: des, distingué, sévir, Faisons, laissent, bon,, les, tiennent,
+Average loss at step  12000 :  4.15104474807
+Training 34 %
+
+Average loss at step  14000 :  4.07232531452
+Training 40 %
+
+Average loss at step  16000 :  4.00770140362
+Training 45 %
+
+Average loss at step  18000 :  3.95857905185
+Training 51 %
+
+Average loss at step  20000 :  3.90004710186
+Training 57 %
+
+Nearest to son: l'exécution, flétris, extraire, l'attention, interdit, croyez, causé, n'étant,
+Nearest to plus: Lorsqu'une, social, dépendance, tolérance,, convaincre, est-il, nombre, accuse,
+Nearest to qu'il: Mais,, qu'elle, forces, poursuit, magie,, qu'on, dit-on,, saurais,
+Nearest to Le: Dans, requête, Un, vint, zélés, valets, déterminé, généraux,
+Nearest to c'est: donc,, notice, montrer,, signe, défaut, original, différemment, équité,
+Nearest to être: l'équité,, innover, atteintes, disputer, moins,, magiciens, article, lumières,,
+Nearest to dont: sainteté, termes, ranger,, n'est-ce, humaine,, tort,, signes,, miraculeux.,
+Nearest to avec: contre, devez, chez, fortes, persécuteurs, bûcher, assassins, moi-même,
+Nearest to si: tissu, s'enfuit, procureur, exception, désiré,, renverser, sectes, guerre,,
+Nearest to celui: ceux, aura, citoyen., [Extrait, conservant, n'élit, malfaiteurs., Chacun,
+Nearest to y: n'y, sophismes, jusqu'ici, tort, d'où, courir, ignorants, équivoque,,
+Nearest to ces: ordonnance, prendra, autres., leurs, les, Rome,, n'est-elle, d'envoyer,
+Nearest to où: haut, acquise, celui-ci, nature,, Là-dessus, insiste, vit, sensible,,
+Nearest to et: bornés, diffame., procédure,, fers, commun,, mais, l'assemblée, s'ensuit,
+Nearest to soit: périt, l'instrument, perdit, arrivé, poursuites, toléreront, Votre, croit,
+Nearest to aux: Faisons, des, distingué, laissent, sévir, bon,, rang, paix,,
+Average loss at step  22000 :  3.86713879764
+Training 62 %
+
+Average loss at step  24000 :  3.82031666851
+Training 68 %
+
+Average loss at step  26000 :  3.78987639582
+Training 74 %
+
+Average loss at step  28000 :  3.75085346818
+Training 80 %
+
+Average loss at step  30000 :  3.72671453416
+Training 85 %
+
+Nearest to son: extraire, l'exécution, flétris, interdit, mon, l'attention, croyez, écrire,
+Nearest to plus: Lorsqu'une, social, dépendance, convaincre, moins, tolérance,, est-il, lui-,
+Nearest to qu'il: qu'elle, Mais,, qu'on, magie,, forces, [Il, poursuit, publiques,,
+Nearest to Le: Dans, Un, requête, vint, zélés, Parce, au, déterminé,
+Nearest to c'est: donc,, notice, montrer,, défaut, original, signe, prie,, différemment,
+Nearest to être: l'équité,, innover, atteintes, disputer, lumières,, moins,, vie., magiciens,
+Nearest to dont: sainteté, ranger,, termes, n'est-ce, humaine,, miraculeux., Quand, signes,,
+Nearest to avec: contre, devez, chez, persécuteurs, fortes, bûcher, assassins, dernières,
+Nearest to si: tissu, s'enfuit, procureur, désiré,, renverser, voyait, garder, d'armes,
+Nearest to celui: ceux, [Extrait, aura, citoyen., conservant, n'élit, Chacun, tribunaux.,
+Nearest to y: n'y, jusqu'ici, tort, attester, d'où, équivoque,, sophismes, courir,
+Nearest to ces: ordonnance, autres., prendra, leurs, d'envoyer, ta, les, n'est-elle,
+Nearest to où: haut, acquise, dernier,, celui-ci, nature,, Là-dessus, l'instruction, insiste,
+Nearest to et: bornés, diffame., procédure,, commun,, fers, s'ensuit, car, l'assemblée,
+Nearest to soit: périt, l'instrument, perdit, Votre, arrivé, poursuites, croit, évangélique,
+Nearest to aux: Faisons, distingué, des, laissent, bon,, sévir, rang, tellement,
+Average loss at step  32000 :  3.69371480799
+Training 91 %
+
+Average loss at step  34000 :  3.67197585976
+Training 97 %
+
+Training 100%
+Training completed, result graph visible at tsne.png and output.txt

@@ -1,0 +1,136 @@
+**********************************************************************
+This wordvec.py script will read in a sample of English, French, or Korean training text and then uses the skip-gram model to train the word vectors. Each pair of words has a probability of appearing together determined by the number of times these pairs of words occur in the training text. For instance, in the training samples, ('United', 'States') will appear more often than ('United', 'Cows'), therefore after training, if the input word is 'United' then 'States' would be outputted with a higher probability compared to 'Cows'. Output will be generated as output.txt in the same directory as this python script. As well, a graph plotting the relative semantic closeness between words is created as tsne.png
+**********************************************************************
+Please choose either English, French, Korean
+Data size 9430281
+Most common words (+UNK) [['UNK', 3601728], ('있다.', 69120), ('수', 64266), ('이', 45102), ('그', 31794)]
+Sample data [100, 506, 100, 175, 417, 405, 507, 508, 509, 0] ['최근', '변경', '최근', '토론', '특수', '기능', '라이브', 'Search', '역링크토론편집역사', 'UNK']
+506 변경 -> 100 최근
+506 변경 -> 100 최근
+100 최근 -> 506 변경
+100 최근 -> 175 토론
+175 토론 -> 100 최근
+175 토론 -> 417 특수
+417 특수 -> 405 기능
+417 특수 -> 175 토론
+Initialized
+Average loss at step  0 :  207.879684448
+Training 0 %
+
+Nearest to 더: 쪽에, 제작된, 완전한, 도원종언, 주축의, 문장이다.[3], 자신의, 삼청관,
+Nearest to 있다.: 초기의, 역경에도, 이가, 남짓되는, 미, 7월, 시천(2010), 해석도,
+Nearest to 않은: 한계를, 사안에, 병을, 일례로, 이병아는, '그, 한국어를, 어차피,
+Nearest to 것이다.: 면적이, 가이드, 얘기하고, 난이, 유비를,, 게다가, 비정기적으로, 소식이,
+Nearest to 후: 인구밀도가, 백만, #), 불어오는, 돈이, 장면까지, 고칠, 반대로,
+Nearest to 본: 냉전이, 내면으로도, 유비를, 미스터, 편집했다., 논의하여, 훔쳐, 찾아,
+Nearest to 한: 된다, 듯한, 수도는, 기묘한, 달라고, 힘, 적고,, 전국시대나,
+Nearest to 한국의: 요, 논의가, 입장에서는, 적자를, 당태종이, 큰, 직접적으로, 7.5.,
+Nearest to 가장: 그다지, 시작하는, 토론, 하나, 《고우영, 연봉이, 갈등,, 개개인의,
+Nearest to 운영회의: 있었던, 중국과도, 섬겼던, 일부에, 경우에만, 하는데, 창작한, 표현하고,
+Nearest to 중국: 배우듯이,, 퇴각하는, 패한, 역사를, 촉빠인가[편집], 역'인, 오히려, 저본이,
+Nearest to 것은: 자료로, 들어가는, 얘기하고, 낫다라고, 본문, 아직은, 문서[편집], 형편없다.,
+Nearest to 게: 쌀과, 히어로, 엄청나게, 보여준다., 인용술,, 셋째, 까지의, 이식을,
+Nearest to 있을: 대하소설에, 왕경, 에피소드가, 다음, 걸려, 관심이, GDP, 평,
+Nearest to 다른: 널리, 남아있는, 공식적, 밖에도, 들어, 오행산에, 소득이, 기여하신,
+Nearest to 각: 처리한다., 제출하여야, 원작인, 짤막하게나마, 판단에, 민담이나, 이전의, 법정,
+Average loss at step  2000 :  23.6994127157
+Training 5 %
+
+Average loss at step  4000 :  3.91808693445
+Training 11 %
+
+Average loss at step  6000 :  3.42777074021
+Training 17 %
+
+Average loss at step  8000 :  3.19554867512
+Training 22 %
+
+Average loss at step  10000 :  3.03476320618
+Training 28 %
+
+Nearest to 더: 삼청관, 부정사용이, 제작된, 도원종언, 판본도, 촉의, 구해, 주축의,
+Nearest to 있다.: 역경에도, 장면까지, 개선에, 시천(2010), 이가, 후대에, 미, 동양사학자,
+Nearest to 않은: 한계를, 일례로, 활동, 이병아는, 사안에, 작가의, 병을, 흥미를,
+Nearest to 것이다.: 난이, 면적이, 연의가, 소식이, 얘기하고, 비정기적으로, 여포의, 하녀로,
+Nearest to 후: 손, 불어오는, 장면까지, 돈이, 인구밀도가, 백만, 하다., 필요할,
+Nearest to 본: 냉전이, 내면으로도, 편집했다., 2014년, 한강의, 삼교의, 원, 수준으로,
+Nearest to 한: 된다, 수도는, 듯한, 기묘한, 가정본을, 비교해, 방납, 갔다가,
+Nearest to 한국의: 요, 당태종이, 황조권, 입장에서는, 7.5., 주인공이, 재적, 위해서는,,
+Nearest to 가장: 개개인의, 하나, 《고우영, 8.5., 전력으로, 시작하는, 토론, 그다지,
+Nearest to 운영회의: 섬겼던, 경우에만, 장씨, 모이기, 하는데, 표현하고, 중국과도, 일부에,
+Nearest to 중국: 패한, 역'인, 촉빠인가[편집], 배우듯이,, 심사, 오래, 인재들이, 퇴각하는,
+Nearest to 것은: 얘기하고, 본문, 절대로, 문서[편집], 형편없다., 명나라, 걸린, 많은데,
+Nearest to 게: 쌀과, 인용술,, 변경, 엄청나게, 히어로, 보여준다., 이식을, 등,,
+Nearest to 있을: 왕경, 걸려, GDP, 에피소드가, 평, 대하소설에, 관심이, UNK,
+Nearest to 다른: 소득이, 남아있는, 오행산에, 널리, 최종, 들어, 공식적, 자신의,
+Nearest to 각: 처리한다., 제출하여야, 원작인, 따라, 판단에, 짤막하게나마, 재심, 이전의,
+Average loss at step  12000 :  2.92660489416
+Training 34 %
+
+Average loss at step  14000 :  2.85921590531
+Training 40 %
+
+Average loss at step  16000 :  2.80949802458
+Training 45 %
+
+Average loss at step  18000 :  2.80128860295
+Training 51 %
+
+Average loss at step  20000 :  2.77513183042
+Training 57 %
+
+Nearest to 더: 부정사용이, 삼청관, 제작된, 판본도, 주축의, 관계가, 놓아,, 촉의,
+Nearest to 있다.: 역경에도, 장면까지, 시천(2010), 동양사학자, 개선에, 초기의, 되었으며,, 이가,
+Nearest to 않은: 한계를, 일례로, 활동, 이병아는, 작가의, 사안에, 병을, 관우가,
+Nearest to 것이다.: 난이, 비정기적으로, 연의가, 듯, 면적이, 하녀로, 여포의, 소식이,
+Nearest to 후: 손, 불어오는, 장면까지, 돈이, 가깝다., 필요할, 백만, 하다.,
+Nearest to 본: 냉전이, 내면으로도, 2014년, 소설이다., 편집했다., 삼교의, 한강의, 하면,
+Nearest to 한: 된다, 수도는, 듯한, 가정본을, 비교해, 기묘한, 9시, 방납,
+Nearest to 한국의: 당태종이, 요, 입장에서는, 재적, 위해서는,, 주인공이, 황조권, 자처하는,
+Nearest to 가장: 8.5., 전력으로, 하나, 개개인의, 시작하는, 《고우영, 한편으로는, 토론,
+Nearest to 운영회의: 섬겼던, 경우에만, 표현하고, 장씨, 모이기, 하는데, 중국과도, 있었던,
+Nearest to 중국: 패한, 역'인, 촉빠인가[편집], 오래, 심사, 된다, 인재들이, 배우듯이,,
+Nearest to 것은: 얘기하고, 본문, 절대로, 형편없다., 명나라, 문서[편집], 많은데, 걸린,
+Nearest to 게: 쌀과, 인용술,, 엄청나게, 변경, 경우는, 보여준다., 즉,, 이식을,
+Nearest to 있을: 걸려, 왕경, GDP, 평, 유저, 에피소드가, 관심이, 대하소설에,
+Nearest to 다른: 소득이, 오행산에, 장점도, 최종, 자신의, 문학의, 영하, 남아있는,
+Nearest to 각: 처리한다., 제출하여야, 따라, 판단에, 재심, 공시된, 짤막하게나마, 원작인,
+Average loss at step  22000 :  2.77604856569
+Training 62 %
+
+Average loss at step  24000 :  2.76151844382
+Training 68 %
+
+Average loss at step  26000 :  2.71848992607
+Training 74 %
+
+Average loss at step  28000 :  2.79329567781
+Training 80 %
+
+Average loss at step  30000 :  2.74316117215
+Training 85 %
+
+Nearest to 더: 부정사용이, 제작된, 삼청관, 판본도, 주축의, 100년, 놓아,, 관계가,
+Nearest to 있다.: 역경에도, 시천(2010), 동양사학자, 되었으며,, 장면까지, 개선에, 초기의, 한두,
+Nearest to 않은: 일례로, 한계를, 활동, 이병아는, 작가의, 사안에, 병을, 상대를,
+Nearest to 것이다.: 비정기적으로, 듯, 난이, 연의가, 하녀로, 면적이, 여포의, 교도청과,
+Nearest to 후: 손, 불어오는, 돈이, 장면까지, 애당초, 필요할, 하다., 가깝다.,
+Nearest to 본: 냉전이, 내면으로도, 2014년, 소설이다., 삼교의, 장정일, 한강의, 편집했다.,
+Nearest to 한: 된다, 듯한, 수도는, 비교해, 가정본을, 기묘한, 9시, 방납,
+Nearest to 한국의: 당태종이, 요, 입장에서는, 위해서는,, 재적, 자처하는, 주인공이, 나온,
+Nearest to 가장: 8.5., 전력으로, 하나, 시작하는, 개개인의, 한편으로는, 나무, 사람이라는,
+Nearest to 운영회의: 경우에만, 섬겼던, 표현하고, 모이기, 장씨, 원문은, 중국과도, 있었던,
+Nearest to 중국: 패한, 역'인, 촉빠인가[편집], 오래, 심사, 된다, 분명히, 대로만,
+Nearest to 것은: 얘기하고, 본문, 절대로, 명나라, 많은데, 형편없다., 문서[편집], 걸린,
+Nearest to 게: 쌀과, 엄청나게, 인용술,, 경우는, 보여준다., 변경, 이식을, 즉,,
+Nearest to 있을: 걸려, GDP, 왕경, 유저, 개최할, 관심이, 평, 에피소드가,
+Nearest to 다른: 소득이, 장점도, 오행산에, 자신의, 최종, 영하, 문학의, 재능이,
+Nearest to 각: 처리한다., 따라, 제출하여야, 재심, 판단에, 공시된, 장기적인, 원작인,
+Average loss at step  32000 :  2.685816036
+Training 91 %
+
+Average loss at step  34000 :  2.71888023917
+Training 97 %
+
+Training 100%
+Training completed, result graph visible at tsne.png and output.txt

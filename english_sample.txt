@@ -1,0 +1,136 @@
+**********************************************************************
+This wordvec.py script will read in a sample of English, French, or Korean training text and then uses the skip-gram model to train the word vectors. Each pair of words has a probability of appearing together determined by the number of times these pairs of words occur in the training text. For instance, in the training samples, ('United', 'States') will appear more often than ('United', 'Cows'), therefore after training, if the input word is 'United' then 'States' would be outputted with a higher probability compared to 'Cows'. Output will be generated as output.txt in the same directory as this python script. As well, a graph plotting the relative semantic closeness between words is created as tsne.png
+**********************************************************************
+Please choose either English, French, Korean
+Data size 17005207
+Most common words (+UNK) [['UNK', 2735459], ('the', 1061396), ('of', 593677), ('and', 416629), ('one', 411764)]
+Sample data [0, 3081, 12, 6, 195, 2, 3134, 46, 59, 156] ['UNK', 'originated', 'as', 'a', 'term', 'of', 'abuse', 'first', 'used', 'against']
+3081 originated -> 12 as
+3081 originated -> 0 UNK
+12 as -> 3081 originated
+12 as -> 6 a
+6 a -> 195 term
+6 a -> 12 as
+195 term -> 2 of
+195 term -> 6 a
+Initialized
+Average loss at step  0 :  230.059875488
+Training 0 %
+
+Nearest to to: program, active, owner, causes, horror, forth, rising, et,
+Nearest to during: participate, rough, kingdoms, arab, hat, gate, grant, metropolitan,
+Nearest to but: focus, jazz, instructions, contrast, france, routes, transition, brown,
+Nearest to two: producer, gain, herbert, wild, contemporary, ending, open, prose,
+Nearest to from: expenditures, britain, ball, herbert, inch, resolution, portrait, nobel,
+Nearest to are: zeus, excess, american, int, hong, spin, catch, models,
+Nearest to will: theological, mainland, surrounding, extends, once, hits, emotional, battle,
+Nearest to for: registered, roger, trade, mechanisms, be, dialect, stations, foundations,
+Nearest to other: victory, sense, imposed, generations, fascist, events, cancer, barrel,
+Nearest to first: coalition, periods, beginning, comedian, classic, cross, seem, elections,
+Nearest to world: hop, now, systems, poor, ran, earliest, composed, communities,
+Nearest to there: famous, raw, suggest, item, title, distinctive, poles, places,
+Nearest to can: male, extra, disk, competition, confederation, mu, borders, covering,
+Nearest to american: earl, enjoyed, heavily, strategic, reserves, viewed, are, olympics,
+Nearest to used: bring, grammar, operating, frame, believes, special, agave, phone,
+Nearest to his: z, genesis, peoples, background, moldova, stating, layers, pressure,
+Average loss at step  2000 :  22.3362703695
+Training 5 %
+
+Average loss at step  4000 :  5.10330794823
+Training 11 %
+
+Average loss at step  6000 :  4.64149281371
+Training 17 %
+
+Average loss at step  8000 :  4.51043903065
+Training 22 %
+
+Average loss at step  10000 :  4.42256509101
+Training 28 %
+
+Nearest to to: com, program, gulf, in, horror, causes, vs, elaborate,
+Nearest to during: participate, rough, arab, southeast, grant, popular, kingdoms, regarding,
+Nearest to but: instructions, focus, jazz, and, brown, own, effects, beliefs,
+Nearest to two: one, nine, finalist, three, six, vs, producer, five,
+Nearest to from: in, expenditures, britain, novel, inch, herbert, and, elaborate,
+Nearest to are: zeus, is, excess, models, agave, capitalism, oxford, proportion,
+Nearest to will: mainland, vs, theological, at, alien, UNK, should, surrounding,
+Nearest to for: registered, of, officer, prison, brazilian, and, in, under,
+Nearest to other: victory, fascist, sense, events, imposed, cancer, generations, charts,
+Nearest to first: UNK, coalition, seem, alternative, prayer, al, right, over,
+Nearest to world: hop, earliest, now, jpg, compounds, systems, ran, composed,
+Nearest to there: hamilton, suggest, title, places, famous, raw, item, able,
+Nearest to can: confederation, either, j, candidate, mainland, appearing, greatest, male,
+Nearest to american: reserves, strategic, enjoyed, heavily, viewed, patent, intel, and,
+Nearest to used: agave, bring, austin, operating, grammar, believes, phone, frame,
+Nearest to his: the, vs, pressure, z, beginning, genesis, peoples, background,
+Average loss at step  12000 :  4.43114588714
+Training 34 %
+
+Average loss at step  14000 :  4.4821808542
+Training 40 %
+
+Average loss at step  16000 :  4.27425998461
+Training 45 %
+
+Average loss at step  18000 :  4.39628714705
+Training 51 %
+
+Average loss at step  20000 :  4.37060478759
+Training 57 %
+
+Nearest to to: nine, com, not, causes, program, can, elaborate, dictionary,
+Nearest to during: participate, in, rough, kingdoms, british, from, arab, southeast,
+Nearest to but: and, instructions, focus, jazz, own, jay, beliefs, brown,
+Nearest to two: one, three, nine, six, five, eight, zero, seven,
+Nearest to from: in, and, expenditures, into, elaborate, inch, of, novel,
+Nearest to are: is, were, zeus, was, be, agave, excess, for,
+Nearest to will: mainland, should, would, vs, theological, at, alien, once,
+Nearest to for: of, registered, in, with, under, officer, brazilian, and,
+Nearest to other: victory, fascist, events, charts, imposed, cancer, sense, barrel,
+Nearest to first: alternative, seem, prayer, right, aspect, league, over, UNK,
+Nearest to world: hop, earliest, composed, compounds, now, jpg, middle, systems,
+Nearest to there: hamilton, it, suggest, places, title, able, attacked, raw,
+Nearest to can: must, to, UNK, mainland, either, confederation, appearing, could,
+Nearest to american: reserves, and, enjoyed, strategic, viewed, heavily, ii, earl,
+Nearest to used: agave, UNK, austin, bring, grammar, operating, believes, phone,
+Nearest to his: the, their, vs, pressure, s, z, genesis, background,
+Average loss at step  22000 :  4.39046136665
+Training 62 %
+
+Average loss at step  24000 :  4.34418581414
+Training 68 %
+
+Average loss at step  26000 :  4.31658661139
+Training 74 %
+
+Average loss at step  28000 :  4.33283063233
+Training 80 %
+
+Average loss at step  30000 :  4.2861601758
+Training 85 %
+
+Nearest to to: nine, can, not, would, for, com, q, in,
+Nearest to during: in, participate, from, rough, kingdoms, into, british, hat,
+Nearest to but: and, instructions, jazz, focus, jay, own, restoration, that,
+Nearest to two: three, four, six, eight, five, one, nine, seven,
+Nearest to from: in, into, elaborate, after, expenditures, during, with, inch,
+Nearest to are: were, is, zeus, be, was, agave, see, for,
+Nearest to will: would, should, mainland, vs, alien, to, theological, online,
+Nearest to for: of, registered, under, with, in, officer, brazilian, to,
+Nearest to other: victory, fascist, charts, barrel, events, cancer, transportation, nouns,
+Nearest to first: prayer, aspect, alternative, league, seem, fathers, right, atomic,
+Nearest to world: hop, earliest, compounds, middle, composed, racial, ran, saudi,
+Nearest to there: it, hamilton, they, able, suggest, these, attacked, places,
+Nearest to can: must, may, to, could, would, either, mainland, appearing,
+Nearest to american: and, enjoyed, reserves, strategic, europeans, ii, captain, specifically,
+Nearest to used: agave, bring, grammar, operating, phone, believes, drum, UNK,
+Nearest to his: the, their, s, vs, pressure, her, background, genesis,
+Average loss at step  32000 :  4.36421538532
+Training 91 %
+
+Average loss at step  34000 :  4.34095604348
+Training 97 %
+
+Training 100%
+Training completed, result graph visible at tsne.png and output.txt

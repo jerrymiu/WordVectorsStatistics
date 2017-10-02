@@ -1,0 +1,31 @@
+Please choose either English, French, Korean
+Found and verified text8.zip
+Data size 17005207
+Most common words (+UNK) [['UNK', 2735459], ('the', 1061396), ('of', 593677), ('and', 416629), ('one', 411764)]
+Sample data [0, 3081, 12, 6, 195, 2, 3134, 46, 59, 156] ['UNK', 'originated', 'as', 'a', 'term', 'of', 'abuse', 'first', 'used', 'against']
+3081 originated -> 0 UNK
+3081 originated -> 12 as
+12 as -> 6 a
+12 as -> 3081 originated
+6 a -> 195 term
+6 a -> 12 as
+195 term -> 6 a
+195 term -> 2 of
+Initialized
+Average loss at step  0 :  208.086975098
+Nearest to use: radical, surrounded, combined, eat, mechanics, involved, hits, lives,
+Nearest to or: held, aaron, etymology, uss, begins, richard, weber, certain,
+Nearest to may: string, tables, lines, organisation, prisoners, bond, coin, conventional,
+Nearest to such: though, fictional, requirement, boundaries, acceptable, equipment, moment, communists,
+Nearest to with: seeking, connection, empire, consisted, allies, adult, block, something,
+Nearest to so: tape, literally, characters, hours, introduction, yellow, covering, cellular,
+Nearest to american: law, guitarist, cemetery, typical, macintosh, electricity, murray, integrated,
+Nearest to but: air, classic, chaos, twentieth, feeling, lane, started, signals,
+Nearest to he: deposits, william, effort, former, artificial, officials, feeling, make,
+Nearest to for: road, julian, tourism, debt, coastal, subsequently, decisions, danger,
+Nearest to nine: francisco, destroy, notion, call, stewart, show, press, demonstrated,
+Nearest to three: photo, amount, roosevelt, detail, better, film, taught, champion,
+Nearest to more: shares, organic, diego, energy, mission, cousin, van, westminster,
+Nearest to seven: developed, concern, efficient, park, b, enemy, israeli, dj,
+Nearest to other: mobile, des, potential, dos, cutting, integration, object, won,
+Nearest to only: include, dog, imperial, arbitrary, chancellor, vacuum, director, cuba,
