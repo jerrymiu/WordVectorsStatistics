@@ -3,6 +3,5 @@ Implements the word2vec skpipgram model. Word2vec takes as its input a large cor
 Run the file by typing
 ```
 python wordvec.py
-
 ```
-There are 3 languages currently supported, English, French, and Korean. The output generated includes a sample of words with the top 8 semantically nearest words, in "output.txt". As well, a graph visualizing the semantic relationship between words is produced in "tsne.png".
+There are 3 languages currently supported, English, French, and Korean. The output generated includes a sample of words with the top 8 semantically nearest words, in "output.txt". As well, a 2-dimensional graph visualizing the semantic relationship between words is produced in "tsne.png". 
