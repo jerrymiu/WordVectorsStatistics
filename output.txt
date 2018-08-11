@@ -1,0 +1,591 @@
+**********************************************************************
+This wordvec.py script will read in a sample of English, French, or Korean training text and then uses the skip-gram model to train the word vectors. Each pair of words has a probability of appearing together determined by the number of times these pairs of words occur in the training text. For instance, in the training samples, ('United', 'States') will appear more often than ('United', 'Cows'), therefore after training, if the input word is 'United' then 'States' would be outputted with a higher probability compared to 'Cows'. Output will be generated as output.txt in the same directory as this python script. As well, a graph plotting the relative semantic closeness between words is created as tsne.png
+**********************************************************************
+Please choose either English, French, Korean
+Data size 9430281
+Most common words (+UNK) [['UNK', 3601728], ('있다.', 69120), ('수', 64266), ('이', 45102), ('그', 31794)]
+Sample data [100, 506, 100, 175, 417, 405, 507, 508, 509, 0] ['최근', '변경', '최근', '토론', '특수', '기능', '라이브', 'Search', '역링크토론편집역사', 'UNK']
+506 변경 -> 100 최근
+506 변경 -> 100 최근
+100 최근 -> 506 변경
+100 최근 -> 175 토론
+175 토론 -> 100 최근
+175 토론 -> 417 특수
+417 특수 -> 405 기능
+417 특수 -> 175 토론
+Initialized
+Average loss at step  0 :  193.324127197
+Training 0 %
+
+Nearest to 것으로: 참석하여, 나뉘어지면, 판본), 있으며, 소설은, 삼국시대에만, 대하드라마에서, 그걸,
+Nearest to 매우: 현재, 소리다., 근데, 편지를, 2017년, 않는다., 어느새, 얌체스러운,
+Nearest to 주인공은: 계속, 이걸, 커뮤니티에서, 붙어, 저지른, 어디, 많이, 연호,
+Nearest to 하지만: 현대에, 조항에서, 싶은, "겉과, 내내, 배, 편이고, 없다고,
+Nearest to 위해: 기준, 개최할, 자신을, (전체, 없진, 명이, 184년, 이후로는,
+Nearest to 같은: 규정되어, 손오공과, 지방, 전토를, "삼국지를, 기전체라서, 시점에서, 키우고,
+Nearest to 작품으로: 이만한, 상대로서, 조선, 창작물의, 기간, 정사에, 김치라는, 여러모로,
+Nearest to 문서: 보더라도, 주제에, 있지만, 까다롭기, 사람들의, 제외하면, 전투로는, 명시하고,
+Nearest to 하고: 더욱, 출판사에서, 내에서, 참전했고(연합군, 말년의, 본디, 처음으로, 이런,
+Nearest to 본: 갈등,, 남은, 예를, 후로, 말한, 것이기에, 제를, 화가,
+Nearest to 비정기: 의역하자면, 읽지, 자세한, 24시간, 작가들이, 유비로, 이들이, 서양인들이,
+Nearest to 잘: 초반에, 프리덤하우스, 인건비, 소설로, 가지는, 있기도, 마인드로, 최대한,
+Nearest to 삼국지: 저지른, 인구는, 진이, 버린다., 꾀를, 보내, 학습시키는, 식으로,
+Nearest to 보면: 모두, 부분이나,, 않는다., 삼국지연의라고, 협(俠)과, 동남풍을, 미국을, 올리거나,,
+Nearest to 그리고: 임금이다., 단순히, 표현하고, 입히는, 요,, 그렇다고, 역사에, 인정받는,
+Nearest to 서문경의: 섬이, 9시, 대병력에, 뛰어넘어,, 아시아의, 따지면, 서슴없이, 10.1.,
+Average loss at step  2000 :  23.8421811132
+Training 5 %
+
+Average loss at step  4000 :  3.90568101209
+Training 11 %
+
+Average loss at step  6000 :  3.44774055749
+Training 17 %
+
+Average loss at step  8000 :  3.21265161493
+Training 22 %
+
+Average loss at step  10000 :  3.03983275381
+Training 28 %
+
+Nearest to 것으로: 참석하여, 삼국시대에만, 있으며, 들고, 해, 년을, 나뉘어지면, 판본),
+Nearest to 매우: 현재, 소리다., 근데, 편지를, 일부, 영웅물이던, 2017년, 않는다.,
+Nearest to 주인공은: 이걸, 계속, 원제는, 상황으로, 간을, 연호, 후반부를, 서문경이,
+Nearest to 하지만: 편이고, 현대에, 싶은, 있어야, :, 조항에서, 좀, 남아,
+Nearest to 위해: 기준, 자신을, 없진, (전체, 이후로는, 명이, 제주도는, 개최할,
+Nearest to 같은: 전토를, 규정되어, 손오공과, 7.3., 지방, 펼치며, 시점에서, 구속력을,
+Nearest to 작품으로: 조선, 이만한, 김치라는, 상대로서, 여러모로, 기간, 정사에, 성향의,
+Nearest to 문서: 주제에, 보더라도, 있지만, 까다롭기, 명시하고, 제외하면, 채용하여, 사람들의,
+Nearest to 하고: 참전했고(연합군, 더욱, 출판사에서, 본디, 언론, 처음으로, 13., 말년의,
+Nearest to 본: 갈등,, 11.7., 데다가,, 예를, 남은, 화가, 후로, 힘들,
+Nearest to 비정기: 편향적이거나,, 24시간, 유비와, 유비로, 당한, 120회본, 가능하다., 의역하자면,
+Nearest to 잘: 프리덤하우스, 초반에, 가지는, 작품들, 최대한, 운영업무, 계략에, 조씨,,
+Nearest to 삼국지: 인구는, 저지른, 무려, 버린다., 않으면, 보내, 꾀를, 유비에게,
+Nearest to 보면: 부분이나,, 협(俠)과, 인덕있는, 미국을, 삼국지연의라고, 소설을, 이게, 모두,
+Nearest to 그리고: 말하면, 임금이다., 표현하고, 그렇다., 역사에, 인정받는, 그렇다고, to,
+Nearest to 서문경의: 9시, 따지면, 전토를, 연의와, 대병력에, 섬이, 선비로서, 서주,
+Average loss at step  12000 :  2.91794393119
+Training 34 %
+
+Average loss at step  14000 :  2.92141294169
+Training 40 %
+
+Average loss at step  16000 :  2.80941911164
+Training 45 %
+
+Average loss at step  18000 :  2.82467076531
+Training 51 %
+
+Average loss at step  20000 :  2.74009580153
+Training 57 %
+
+Nearest to 것으로: 참석하여, 년을, 삼국시대에만, 들고, 적고,, 독자, 있으며, 역사드라마나,
+Nearest to 매우: 현재, 소리다., 근데, 영웅물이던, 편지를, 피해없이, 낫다라고, 2017년,
+Nearest to 주인공은: 원제는, 계속, 간을, 이걸, 상황으로, 후반부를, 연호, 라는,
+Nearest to 하지만: 편이고, 좀, 싶은, 있어야, :, 남아, 조항에서, 많다(…).,
+Nearest to 위해: 기준, 이후로는, (전체, 자신을, 없진, 명이, 100%, 제주도는,
+Nearest to 같은: 전토를, 펼치며, 7.3., 규정되어, 손오공과, 지방, 시점에서, 기전체라서,
+Nearest to 작품으로: 조선, 이만한, 상대로서, 김치라는, 여러모로, 기간, 정사에, 성향의,
+Nearest to 문서: 주제에, 보더라도, 있지만, 채용하여, 까다롭기, 제외하면, 사람들의, 민주,
+Nearest to 하고: 참전했고(연합군, 본디, 출판사에서, 더욱, 13., 설도, 언론, 앞,
+Nearest to 본: 갈등,, 11.7., 데다가,, 예를, 후로, 남은, 화가, 가정본이,
+Nearest to 비정기: 편향적이거나,, 24시간, 유비로, 유비와, 120회본, 가능하다., 당한, 손색이,
+Nearest to 잘: 프리덤하우스, 초반에, 가지는, 작품들, 운영업무, 조씨,, 최대한, 원작을,
+Nearest to 삼국지: 인구는, 보내, 버린다., 않으면, 저지른, 무려, 꾀를, 얻는,
+Nearest to 보면: 부분이나,, 협(俠)과, 인덕있는, 미국을, 이게, 여담으로, 삼국지연의라고, 동남풍을,
+Nearest to 그리고: 말하면, 임금이다., 그렇다., 인정받는, 게시하여야, 표현하고, 관우는, 그렇다고,
+Nearest to 서문경의: 9시, 따지면, 연의와, 전토를, 왜, 선비로서, 대병력에, 서주,
+Average loss at step  22000 :  2.73147509986
+Training 62 %
+
+Average loss at step  24000 :  2.76979924035
+Training 68 %
+
+Average loss at step  26000 :  2.7579455727
+Training 74 %
+
+Average loss at step  28000 :  2.73151672515
+Training 80 %
+
+Average loss at step  30000 :  2.72688102168
+Training 85 %
+
+Nearest to 것으로: 독자, 년을, 적고,, 들고, 역사드라마나, 참석하여, 삼국시대에만, 완전히,
+Nearest to 매우: 현재, 소리다., 근데, 영웅물이던, 피해없이, 북한과의, 낫다라고, 편지를,
+Nearest to 주인공은: 원제는, 계속, 라는, 후반부를, 연호, 이걸, 간을, 무송을,
+Nearest to 하지만: 편이고, 좀, 싶은, 있어야, :, 많다(…)., 조항에서, 보이도록,
+Nearest to 위해: 기준, 이후로는, (전체, 자신을, 100%, 명이, 없진, 제주도는,
+Nearest to 같은: 펼치며, 7.3., 전토를, 규정되어, 손오공과, 지방, 시점에서, 기전체라서,
+Nearest to 작품으로: 조선, UNK, 이만한, 상대로서, 김치라는, 이전, 여러모로, 기간,
+Nearest to 문서: 보더라도, 주제에, 있지만, 까다롭기, 제외하면, 채용하여, 민주, 사람들의,
+Nearest to 하고: 참전했고(연합군, 설도, 본디, 13., 가지고, 언론, 더욱, 출판사에서,
+Nearest to 본: 갈등,, 11.7., 데다가,, 예를, 물려, 평역, 정비석, 가정본이,
+Nearest to 비정기: 편향적이거나,, 24시간, 유비로, 120회본, 운영회의에서는, UNK, 유비와, 손색이,
+Nearest to 잘: 프리덤하우스, 초반에, 운영업무, 조씨,, 가지는, 마음이, 원작을, 있기도,
+Nearest to 삼국지: 인구는, 보내, 않으면, 저지른, 버린다., 무려, 논의할, 능력을,
+Nearest to 보면: 부분이나,, 인덕있는, 협(俠)과, 여담으로, 미국을, 이게, 동남풍을, 삼국지연의라고,
+Nearest to 그리고: 말하면, 그렇다., 임금이다., 게시하여야, 인정받는, 개에, 유비가, 표현하고,
+Nearest to 서문경의: 9시, 따지면, 연의와, 전토를, 왜, 수가를, 선비로서, 대병력에,
+Average loss at step  32000 :  2.65771414372
+Training 91 %
+
+Average loss at step  34000 :  2.70506403211
+Training 97 %
+
+Training 100%
+Training completed, result graph visible at tsne.png and output.txt
+**********************************************************************
+This wordvec.py script will read in a sample of English, French, or Korean training text and then uses the skip-gram model to train the word vectors. Each pair of words has a probability of appearing together determined by the number of times these pairs of words occur in the training text. For instance, in the training samples, ('United', 'States') will appear more often than ('United', 'Cows'), therefore after training, if the input word is 'United' then 'States' would be outputted with a higher probability compared to 'Cows'. Output will be generated as output.txt in the same directory as this python script. As well, a graph plotting the relative semantic closeness between words is created as tsne.png
+**********************************************************************
+Please choose either English, French, Korean
+Data size 17005207
+Most common words (+UNK) [['UNK', 2735459], ('the', 1061396), ('of', 593677), ('and', 416629), ('one', 411764)]
+Sample data [0, 3081, 12, 6, 195, 2, 3134, 46, 59, 156] ['UNK', 'originated', 'as', 'a', 'term', 'of', 'abuse', 'first', 'used', 'against']
+3081 originated -> 0 UNK
+3081 originated -> 12 as
+12 as -> 3081 originated
+12 as -> 6 a
+6 a -> 195 term
+6 a -> 12 as
+195 term -> 2 of
+195 term -> 6 a
+Initialized
+Average loss at step  0 :  180.369140625
+Training 0 %
+
+Nearest to by: question, vol, virus, plains, variations, gave, die, tried,
+Nearest to three: category, gases, earth, now, animation, then, forms, trees,
+Nearest to four: collection, leader, unit, charge, jazz, belief, terms, jimmy,
+Nearest to such: australian, struggle, wealthy, club, forests, m, unix, benefit,
+Nearest to may: partly, known, solo, just, gift, bringing, started, finite,
+Nearest to than: tunnel, bah, concluded, sound, consensus, break, fund, trip,
+Nearest to they: transferred, forced, priests, cheese, volume, kick, operation, mile,
+Nearest to war: explain, record, stating, tube, impact, hardware, restricted, anything,
+Nearest to when: expressions, enough, refused, releases, character, valuable, from, cable,
+Nearest to not: wisconsin, level, senate, abandoned, new, referred, seven, arms,
+Nearest to two: fifty, israel, intel, ethics, composed, swedish, prince, throughout,
+Nearest to are: becoming, bass, unsuccessful, magic, tracks, restrictions, sharing, manufacturers,
+Nearest to the: synthesis, ends, minimal, ethical, unable, concrete, agave, larger,
+Nearest to be: sides, option, host, program, distinction, stuart, read, swiss,
+Nearest to between: ll, launch, storm, bass, dimension, voices, jimmy, visible,
+Nearest to an: published, jump, criticism, julius, profit, break, republican, election,
+Average loss at step  2000 :  22.3230222969
+Training 5 %
+
+Average loss at step  4000 :  5.09621145445
+Training 11 %
+
+Average loss at step  6000 :  4.64435440576
+Training 17 %
+
+Average loss at step  8000 :  4.53537115717
+Training 22 %
+
+Average loss at step  10000 :  4.42875100207
+Training 28 %
+
+Nearest to by: question, in, and, substance, vol, was, plains, on,
+Nearest to three: zero, nine, two, jpg, six, phi, category, UNK,
+Nearest to four: zero, nine, eight, leader, two, jpg, collection, six,
+Nearest to such: australian, club, magazine, wealthy, forests, struggle, rainfall, unix,
+Nearest to may: known, gift, is, partly, just, phi, predicted, finite,
+Nearest to than: tunnel, sound, b, break, girl, concluded, europeans, iraq,
+Nearest to they: transferred, forced, he, runs, nearby, experiences, john, mile,
+Nearest to war: tendency, record, stating, austin, explain, tube, impact, hardware,
+Nearest to when: refused, till, vs, mathbf, from, enough, grow, greater,
+Nearest to not: wisconsin, senate, transport, test, smooth, referred, level, director,
+Nearest to two: one, nine, jpg, agave, three, vs, four, phi,
+Nearest to are: were, is, becoming, restrictions, observed, under, linked, then,
+Nearest to the: a, agave, vs, his, jpg, their, essentially, mathbf,
+Nearest to be: host, swiss, as, sides, option, split, michael, have,
+Nearest to between: ll, launch, storm, dimension, for, bass, whilst, jimmy,
+Nearest to an: criticism, published, the, jump, younger, einstein, plans, unusual,
+Average loss at step  12000 :  4.43089713633
+Training 34 %
+
+Average loss at step  14000 :  4.42460090017
+Training 40 %
+
+Average loss at step  16000 :  4.28642799783
+Training 45 %
+
+Average loss at step  18000 :  4.25338405156
+Training 51 %
+
+Average loss at step  20000 :  4.37270333469
+Training 57 %
+
+Nearest to by: was, question, in, substance, with, committed, for, on,
+Nearest to three: zero, two, eight, nine, six, seven, four, one,
+Nearest to four: eight, zero, nine, six, two, seven, three, one,
+Nearest to such: australian, club, magazine, wealthy, unix, rainfall, critique, temple,
+Nearest to may: known, gift, UNK, partly, assumed, predicted, is, just,
+Nearest to than: sound, tunnel, girl, europeans, break, concluded, iraq, b,
+Nearest to they: he, there, forced, experiences, transferred, it, nearby, runs,
+Nearest to war: tendency, record, austin, stating, explain, tube, hardware, anything,
+Nearest to when: refused, under, from, geographical, till, vs, grow, hardware,
+Nearest to not: wisconsin, senate, it, test, referred, smooth, transport, often,
+Nearest to two: one, three, nine, zero, eight, four, six, vs,
+Nearest to are: were, is, restrictions, becoming, have, been, observed, was,
+Nearest to the: agave, a, their, this, his, one, its, vs,
+Nearest to be: have, as, is, host, split, swiss, been, option,
+Nearest to between: ll, launch, storm, for, dimension, in, jimmy, tendency,
+Nearest to an: the, criticism, jump, already, published, plans, noble, unusual,
+Average loss at step  22000 :  4.39395949614
+Training 62 %
+
+Average loss at step  24000 :  4.33894942498
+Training 68 %
+
+Average loss at step  26000 :  4.32033977509
+Training 74 %
+
+Average loss at step  28000 :  4.33364450061
+Training 80 %
+
+Average loss at step  30000 :  4.2854031949
+Training 85 %
+
+Nearest to by: was, in, with, question, substance, committed, on, eight,
+Nearest to three: six, four, eight, two, seven, nine, five, zero,
+Nearest to four: eight, six, nine, five, seven, two, three, zero,
+Nearest to such: club, well, magazine, australian, wealthy, critique, trust, unix,
+Nearest to may: must, gift, assumed, will, known, nine, would, browser,
+Nearest to than: girl, sound, tunnel, europeans, break, concluded, florida, bah,
+Nearest to they: he, there, it, you, she, forced, experiences, not,
+Nearest to war: tendency, record, hardware, impact, stating, tube, explain, anything,
+Nearest to when: under, from, geographical, refused, till, vs, grow, as,
+Nearest to not: wisconsin, it, also, senate, referred, often, smooth, transport,
+Nearest to two: four, three, one, six, eight, five, zero, seven,
+Nearest to are: were, is, have, restrictions, was, been, observed, be,
+Nearest to the: its, agave, their, his, a, this, UNK, vs,
+Nearest to be: have, is, been, as, was, are, by, split,
+Nearest to between: ll, launch, dimension, storm, in, whilst, jimmy, tendency,
+Nearest to an: the, criticism, jump, already, possession, jackson, democrats, julius,
+Average loss at step  32000 :  4.36885874689
+Training 91 %
+
+Average loss at step  34000 :  4.34610869431
+Training 97 %
+
+Training 100%
+Training completed, result graph visible at tsne.png and output.txt
+**********************************************************************
+This wordvec.py script will read in a sample of English, French, or Korean training text and then uses the skip-gram model to train the word vectors. Each pair of words has a probability of appearing together determined by the number of times these pairs of words occur in the training text. For instance, in the training samples, ('United', 'States') will appear more often than ('United', 'Cows'), therefore after training, if the input word is 'United' then 'States' would be outputted with a higher probability compared to 'Cows'. Output will be generated as output.txt in the same directory as this python script. As well, a graph plotting the relative semantic closeness between words is created as tsne.png
+**********************************************************************
+Please choose either English, French, Korean
+Data size 9430281
+Most common words (+UNK) [['UNK', 3601728], ('있다.', 69120), ('수', 64266), ('이', 45102), ('그', 31794)]
+Sample data [100, 506, 100, 175, 417, 405, 507, 508, 509, 0] ['최근', '변경', '최근', '토론', '특수', '기능', '라이브', 'Search', '역링크토론편집역사', 'UNK']
+506 변경 -> 100 최근
+506 변경 -> 100 최근
+100 최근 -> 175 토론
+100 최근 -> 506 변경
+175 토론 -> 100 최근
+175 토론 -> 417 특수
+417 특수 -> 175 토론
+417 특수 -> 405 기능
+Initialized
+Average loss at step  0 :  223.114303589
+Training 0 %
+
+Nearest to 손오공이: 떼거지로, 결단성도, 허구라는, 얌체스러운, 방해, 같이, 반금련은, 대체적으로,
+Nearest to 더: 상당수가, 도구가, 상, 공을, 통속적인, 섬겼던, 배우듯이,, 보면,
+Nearest to 문서를: [10], 않으며, 아시아의, 심지어, 본은, 못하게, 충분히, 9.,
+Nearest to 때문에: 촉은, 4.4., 구해, 순간, 성장이, 우대한, 정서에서, 원판,
+Nearest to 때: 진군,, 몰려, 미학을, 멸망하는, 비범한, 비하면, 미학(美學)을, 포함해서,
+Nearest to 경우가: 힘든, 관직진출이, 성격, 건강보험증, 취급을, 제재에, 1차, 유방과도,
+Nearest to 사실: 저작권을, 찌질하게, 사람, 구시대적이고, 분포가, 거짓이고, 분명히, 번역이다.,
+Nearest to 대해: 찾아볼, 뒤늦게, 사용하는, 1천, 펼치기, 손오공은, 반박의, 원나라,
+Nearest to 한국: 평가, 자체도, 사섭, 사람들을, 분류, 흐름인지라, 처음으로, 루쉰이,
+Nearest to 중: 사회에서는, 그들의, 정립시킨, 삼국지/연표, 까다롭기, 빼놓았을, 정도라, 자신들의,
+Nearest to 경우: 모른다., 않아, 서진의, 할, 내려온다., 목숨을, 이어지는, 삼국지연의가,
+Nearest to 있으며,: 주제가를, 서양인들이, 같이, 핵심, 많지만, 항복할까, 넘어오면서, 못하다고,
+Nearest to 나온다.: 시, 일부가, 이병아와, 있었다., GDP, 식민지의, 정사드립, 활약이,
+Nearest to 그리고: 연의의, 청나라의, 수준으로, [14], 진창, 아들., 양산박이, 직접적인,
+Nearest to 운영회의: 비중이, 요청, 없다"라고, 장대기는, 연의를, 일이다., 혹은, 까딱,
+Nearest to 비공개: '전적인, 새로운, 최근, 합의안의, 지속적으로, 보자., 수치가, 인물이라며,
+Average loss at step  2000 :  23.7466757572
+Training 5 %
+
+Average loss at step  4000 :  3.90551154345
+Training 11 %
+
+Average loss at step  6000 :  3.44570547765
+Training 17 %
+
+Average loss at step  8000 :  3.19217358714
+Training 22 %
+
+**********************************************************************
+This wordvec.py script will read in a sample of English, French, or Korean training text and then uses the skip-gram model to train the word vectors. Each pair of words has a probability of appearing together determined by the number of times these pairs of words occur in the training text. For instance, in the training samples, ('United', 'States') will appear more often than ('United', 'Cows'), therefore after training, if the input word is 'United' then 'States' would be outputted with a higher probability compared to 'Cows'. Output will be generated as output.txt in the same directory as this python script. As well, a graph plotting the relative semantic closeness between words is created as tsne.png
+**********************************************************************
+Please choose either English, French, Korean
+Data size 17005207
+Most common words (+UNK) [['UNK', 2735459], ('the', 1061396), ('of', 593677), ('and', 416629), ('one', 411764)]
+Sample data [0, 3081, 12, 6, 195, 2, 3134, 46, 59, 156] ['UNK', 'originated', 'as', 'a', 'term', 'of', 'abuse', 'first', 'used', 'against']
+3081 originated -> 12 as
+3081 originated -> 0 UNK
+12 as -> 6 a
+12 as -> 3081 originated
+6 a -> 195 term
+6 a -> 12 as
+195 term -> 6 a
+195 term -> 2 of
+Initialized
+Average loss at step  0 :  206.675186157
+Training 0 %
+
+Nearest to all: named, described, corner, composers, terrain, discrete, rival, abolished,
+Nearest to often: abolished, unlikely, trend, feel, maps, causes, previously, little,
+Nearest to after: order, ceremony, relatives, canterbury, joke, force, shorter, package,
+Nearest to state: catalan, wish, maria, though, purposes, mormon, featuring, racing,
+Nearest to the: unless, plains, poles, express, miles, period, publishers, age,
+Nearest to such: amino, roots, completion, ford, access, channels, observation, approaches,
+Nearest to have: dick, camera, deep, next, attacks, congo, madrid, construction,
+Nearest to of: palestinian, because, summer, cheese, name, baltic, initially, est,
+Nearest to three: dna, colorado, room, independent, here, forest, born, reagan,
+Nearest to also: iso, cm, threat, training, reagan, voting, song, through,
+Nearest to than: distance, os, invasion, dancing, perhaps, tables, arabs, strictly,
+Nearest to an: via, sea, partly, escape, decade, hungarian, seen, returns,
+Nearest to world: sharp, demand, amazon, romanian, bruce, buffalo, charter, closely,
+Nearest to and: meetings, rough, molecules, anglo, transferred, alice, binding, suspended,
+Nearest to see: engineer, course, populated, hitler, locally, domain, patent, stability,
+Nearest to with: neck, moore, availability, headquarters, allied, problems, ali, should,
+Average loss at step  2000 :  22.2635434701
+Training 5 %
+
+Average loss at step  4000 :  5.09731031656
+Training 11 %
+
+Average loss at step  6000 :  4.65709713304
+Training 17 %
+
+Average loss at step  8000 :  4.53318569183
+Training 22 %
+
+Average loss at step  10000 :  4.42014957762
+Training 28 %
+
+Nearest to all: errors, corner, two, sun, abolished, terrain, funds, most,
+Nearest to often: abolished, previously, little, causes, feel, visit, photo, ba,
+Nearest to after: ceremony, joke, order, animals, t, award, brought, national,
+Nearest to state: catalan, wish, roots, though, formula, blue, phi, medium,
+Nearest to the: a, his, jpg, agave, finnish, deals, nine, an,
+Nearest to such: roots, completion, ford, observation, approaches, member, days, entry,
+Nearest to have: attacks, next, camera, dick, gift, cell, be, congo,
+Nearest to of: in, and, collins, for, agave, from, jpg, onto,
+Nearest to three: two, nine, zero, one, six, jpg, dna, colorado,
+Nearest to also: iso, widely, threat, cm, training, mp, confederation, bearing,
+Nearest to than: strictly, os, distance, temple, famous, generic, arabs, processes,
+Nearest to an: via, the, seen, escape, done, tail, hungarian, phi,
+Nearest to world: sharp, demand, amazon, cover, democratic, romanian, buffalo, humans,
+Nearest to and: in, or, of, jpg, nine, agave, phi, alien,
+Nearest to see: engineer, course, was, nine, generic, scholar, eight, locally,
+Nearest to with: vs, mathbf, in, for, neck, of, fourth, critical,
+Average loss at step  12000 :  4.43003252733
+Training 34 %
+
+Average loss at step  14000 :  4.53785979164
+Training 40 %
+
+Average loss at step  16000 :  4.28273207986
+Training 45 %
+
+Average loss at step  18000 :  4.25253765357
+Training 51 %
+
+Average loss at step  20000 :  4.37246399438
+Training 57 %
+
+Nearest to all: two, errors, corner, terrain, abolished, various, funds, most,
+Nearest to often: abolished, previously, also, little, photo, distributed, visit, incorporated,
+Nearest to after: joke, ceremony, order, brought, animals, national, t, relatives,
+Nearest to state: wish, catalan, roots, blue, formula, though, maria, phi,
+Nearest to the: a, his, jpg, this, agave, one, its, nine,
+Nearest to such: completion, roots, observation, ford, amino, member, approaches, entry,
+Nearest to have: be, attacks, camera, has, next, gift, dick, had,
+Nearest to of: in, and, nine, collins, for, from, agave, jpg,
+Nearest to three: two, nine, six, zero, eight, five, seven, one,
+Nearest to also: iso, widely, threat, often, cm, usually, mp, reagan,
+Nearest to than: os, strictly, temple, distance, processes, famous, arabs, generic,
+Nearest to an: seen, via, the, escape, hungarian, tail, preserved, phi,
+Nearest to world: sharp, amazon, demand, cover, romanian, buffalo, democratic, name,
+Nearest to and: or, jpg, agave, nine, phi, UNK, alien, of,
+Nearest to see: engineer, course, premier, domain, stability, eight, generic, framework,
+Nearest to with: for, vs, in, moore, between, mathbf, neck, by,
+Average loss at step  22000 :  4.38066213107
+Training 62 %
+
+Average loss at step  24000 :  4.34214122689
+Training 68 %
+
+Average loss at step  26000 :  4.32002971578
+Training 74 %
+
+Average loss at step  28000 :  4.33346178341
+Training 80 %
+
+Average loss at step  30000 :  4.28480685878
+Training 85 %
+
+Nearest to all: various, errors, two, most, terrain, funds, corner, some,
+Nearest to often: also, abolished, previously, little, photo, incorporated, distributed, quite,
+Nearest to after: joke, ceremony, brought, into, four, six, animals, national,
+Nearest to state: catalan, roots, wish, blue, phi, UNK, formula, though,
+Nearest to the: its, their, his, a, this, UNK, jpg, one,
+Nearest to such: completion, observation, roots, ford, member, approaches, entry, amino,
+Nearest to have: has, be, had, attacks, camera, gift, were, are,
+Nearest to of: collins, in, for, nine, and, eight, agave, from,
+Nearest to three: two, eight, five, six, four, nine, seven, zero,
+Nearest to also: iso, often, widely, threat, usually, reagan, cm, sometimes,
+Nearest to than: os, temple, distance, strictly, for, hundred, processes, famous,
+Nearest to an: the, seen, via, hungarian, starting, tail, escape, phi,
+Nearest to world: sharp, amazon, demand, cover, romanian, buffalo, democratic, nietzsche,
+Nearest to and: or, phi, jpg, alien, agave, zero, emergency, one,
+Nearest to see: engineer, stability, framework, eight, domain, premier, course, from,
+Nearest to with: for, between, in, moore, vs, by, mathbf, fourth,
+Average loss at step  32000 :  4.36007879245
+Training 91 %
+
+Average loss at step  34000 :  4.34484919798
+Training 97 %
+
+Training 100%
+Training completed, result graph visible at tsne.png and output.txt
+**********************************************************************
+This wordvec.py script will read in a sample of English, French, or Korean training text and then uses the skip-gram model to train the word vectors. Each pair of words has a probability of appearing together determined by the number of times these pairs of words occur in the training text. For instance, in the training samples, ('United', 'States') will appear more often than ('United', 'Cows'), therefore after training, if the input word is 'United' then 'States' would be outputted with a higher probability compared to 'Cows'. Output will be generated as output.txt in the same directory as this python script. As well, a graph plotting the relative semantic closeness between words is created as tsne.png
+**********************************************************************
+Please choose either English, French, Korean
+Data size 17005207
+Most common words (+UNK) [['UNK', 2735459], ('the', 1061396), ('of', 593677), ('and', 416629), ('one', 411764)]
+Sample data [0, 3081, 12, 6, 195, 2, 3134, 46, 59, 156] ['UNK', 'originated', 'as', 'a', 'term', 'of', 'abuse', 'first', 'used', 'against']
+3081 originated -> 0 UNK
+3081 originated -> 12 as
+12 as -> 6 a
+12 as -> 3081 originated
+6 a -> 12 as
+6 a -> 195 term
+195 term -> 2 of
+195 term -> 6 a
+Initialized
+Average loss at step  0 :  205.338928223
+Training 0 %
+
+Nearest to called: mother, taken, it, late, fall, distant, learned, hat,
+Nearest to who: wind, tissue, initially, mickey, from, ce, applied, hold,
+Nearest to united: ce, sight, guard, coast, nations, implementation, atmosphere, usa,
+Nearest to be: you, identification, conversion, salt, code, traffic, recordings, hoover,
+Nearest to between: coined, notice, rising, performing, shakespeare, substantial, cultures, sources,
+Nearest to new: slavic, arrest, generate, pre, car, defeat, factbook, wiki,
+Nearest to on: angeles, snow, basis, socialism, comment, rather, minute, values,
+Nearest to up: dr, presidency, money, manner, technique, recorded, increasingly, exactly,
+Nearest to six: beyond, improve, recovered, roosevelt, widely, scott, ended, essential,
+Nearest to for: circles, illustrated, elected, april, receives, john, born, ended,
+Nearest to often: tiny, publications, instead, preserved, addresses, ago, money, disk,
+Nearest to been: execution, view, diseases, content, benefits, backed, point, capitalism,
+Nearest to during: broadcast, reaches, assumed, campus, aware, dedicated, useful, institute,
+Nearest to more: eight, capabilities, marine, horror, reference, quarter, five, big,
+Nearest to to: traditions, cavalry, carolina, provide, balance, smith, promote, song,
+Nearest to is: pp, combined, increasingly, funding, fate, end, sole, accuracy,
+Average loss at step  2000 :  22.3553443217
+Training 5 %
+
+Average loss at step  4000 :  5.09022626853
+Training 11 %
+
+Average loss at step  6000 :  4.64045824218
+Training 17 %
+
+Average loss at step  8000 :  4.50958009505
+Training 22 %
+
+Average loss at step  10000 :  4.42853918958
+Training 28 %
+
+Nearest to called: mother, taken, it, fall, late, UNK, bank, united,
+Nearest to who: tissue, wind, from, phi, applied, fell, initially, hold,
+Nearest to united: guard, ce, atmosphere, coast, sight, nations, implementation, launched,
+Nearest to be: been, similarly, you, conversion, code, identification, traffic, abu,
+Nearest to between: coined, alien, agave, performing, cultures, higher, thousands, rising,
+Nearest to new: agave, car, defeat, supports, factbook, himself, guitar, generate,
+Nearest to on: in, and, snow, two, angeles, signing, minute, unable,
+Nearest to up: dr, manner, presidency, finalist, money, technique, exactly, legislature,
+Nearest to six: nine, zero, two, one, jpg, three, UNK, eight,
+Nearest to for: of, vs, in, step, and, torah, give, seven,
+Nearest to often: finalist, preserved, money, tiny, regarded, asia, instead, publications,
+Nearest to been: be, execution, similarly, capitalism, benefits, archbishop, anthony, supreme,
+Nearest to during: broadcast, jpg, attributed, reaches, assumed, phi, lie, dedicated,
+Nearest to more: five, marine, secretary, horror, errors, looked, eight, reference,
+Nearest to to: traditions, occasionally, consonants, nineteenth, tissue, in, at, absolute,
+Nearest to is: was, pp, are, tell, simultaneously, solve, mathbf, increasingly,
+Average loss at step  12000 :  4.43180207133
+Training 34 %
+
+Average loss at step  14000 :  4.45301789534
+Training 40 %
+
+Average loss at step  16000 :  4.27611231506
+Training 45 %
+
+Average loss at step  18000 :  4.25761726654
+Training 51 %
+
+Average loss at step  20000 :  4.37103643727
+Training 57 %
+
+Nearest to called: mother, taken, bank, scotland, distant, cd, fall, late,
+Nearest to who: tissue, wind, applied, often, from, fell, phi, and,
+Nearest to united: guard, ce, sight, atmosphere, nations, coast, implementation, forty,
+Nearest to be: been, was, is, by, similarly, as, you, kick,
+Nearest to between: alien, agave, coined, performing, cultures, rising, higher, notice,
+Nearest to new: agave, car, supports, defeat, of, connecticut, factbook, guitar,
+Nearest to on: in, two, snow, from, signing, storm, angeles, rather,
+Nearest to up: dr, manner, presidency, finalist, exactly, money, technique, legislature,
+Nearest to six: nine, zero, eight, seven, five, three, two, one,
+Nearest to for: of, vs, in, torah, from, and, with, give,
+Nearest to often: finalist, preserved, money, regarded, strict, who, generally, tiny,
+Nearest to been: be, similarly, capitalism, execution, supreme, by, cellular, archbishop,
+Nearest to during: broadcast, of, after, attributed, campus, in, assumed, jpg,
+Nearest to more: most, secretary, marine, errors, looked, UNK, flag, horror,
+Nearest to to: nine, occasionally, nineteenth, traditions, consonants, not, can, vs,
+Nearest to is: was, are, UNK, nine, tell, were, pp, be,
+Average loss at step  22000 :  4.38445889628
+Training 62 %
+
+Average loss at step  24000 :  4.33908075917
+Training 68 %
+
+Average loss at step  26000 :  4.31510555339
+Training 74 %
+
+Average loss at step  28000 :  4.332239429
+Training 80 %
+
+Average loss at step  30000 :  4.28587206638
+Training 85 %
+
+Nearest to called: mother, taken, bank, distant, cd, presented, given, scotland,
+Nearest to who: tissue, he, often, wind, they, applied, fell, and,
+Nearest to united: guard, ce, sight, atmosphere, coast, nations, forty, last,
+Nearest to be: been, by, was, is, as, are, have, similarly,
+Nearest to between: with, alien, agave, coined, rising, in, cultures, performing,
+Nearest to new: agave, supports, defeat, car, connecticut, guitar, generate, factbook,
+Nearest to on: in, snow, from, signing, at, angeles, essay, solar,
+Nearest to up: manner, dr, exactly, finalist, money, presidency, technique, legislature,
+Nearest to six: nine, eight, five, zero, seven, three, four, two,
+Nearest to for: vs, of, torah, in, seven, passenger, to, with,
+Nearest to often: finalist, preserved, generally, regarded, who, money, also, strict,
+Nearest to been: be, by, similarly, were, have, was, had, cellular,
+Nearest to during: after, in, broadcast, of, attributed, on, from, around,
+Nearest to more: most, marine, secretary, errors, flag, so, capabilities, looked,
+Nearest to to: might, can, consonants, occasionally, not, nine, nineteenth, traditions,
+Nearest to is: was, are, has, tell, were, be, by, nine,
+Average loss at step  32000 :  4.36621937227
+Training 91 %
+
+Average loss at step  34000 :  4.34426939297
+Training 97 %
+
+Training 100%
+Training completed, result graph visible at tsne.png and output.txt
